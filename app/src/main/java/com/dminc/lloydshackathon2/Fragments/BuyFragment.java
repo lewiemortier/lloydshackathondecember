@@ -48,7 +48,7 @@ public class BuyFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_buy, container, false);
-        ButterKnife.bind(v, getActivity());
+        ButterKnife.bind(this, v);
 
         CarAdapter carAdapter = new CarAdapter(getActivity(), cars);
         mListCars.setAdapter(carAdapter);

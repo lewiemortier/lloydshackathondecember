@@ -2,6 +2,7 @@ package com.dminc.lloydshackathon2.Adapters;
 
 import android.content.Context;
 import android.media.Image;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -52,7 +53,7 @@ public class CarAdapter extends BaseAdapter {
         CarViewHolder viewHolder;
         if (convertView == null) {
             viewHolder = new CarViewHolder();
-            convertView = parent.inflate(parent.getContext(), R.layout.view_car, parent);
+            convertView = LayoutInflater.from(mContext).inflate(R.layout.view_car, parent, false);
             viewHolder.price = (TextView) convertView.findViewById(R.id.car_price);
             viewHolder.make = (TextView) convertView.findViewById(R.id.car_make);
             viewHolder.image = (ImageView) convertView.findViewById(R.id.car_image);
