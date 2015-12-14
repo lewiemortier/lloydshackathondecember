@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/slider_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Some text" />
+
+    <SeekBar
+        android:id="@+id/slider_seekbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/slider_bottom"
+        android:layout_marginTop="@dimen/slider_top"
+        android:layout_below="@id/slider_title"
+        android:layout_toLeftOf="@+id/slider_value"
+        android:layout_toStartOf="@+id/slider_value" />
+
+    <EditText
+        android:layout_alignParentRight="true"
+        android:id="@+id/slider_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="32dp"/>
+
+</merge>
