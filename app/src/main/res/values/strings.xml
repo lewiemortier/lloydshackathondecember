@@ -5,4 +5,7 @@
     <string name="available_credit">Available credit</string>
     <string name="deposit">Deposit</string>
     <string name="term">Term</string>
+    <string name="filter">Filter</string>
+    <string name="bmw">BMW</string>
+    <string name="add_more_filter">+ Filter</string>
 </resources>

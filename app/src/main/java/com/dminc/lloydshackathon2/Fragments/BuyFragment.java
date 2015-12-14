@@ -6,9 +6,15 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
+import com.dminc.lloydshackathon2.Adapters.CarAdapter;
+import com.dminc.lloydshackathon2.Objects.Car;
 import com.dminc.lloydshackathon2.R;
 import com.dminc.lloydshackathon2.Vews.SlidingBar;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -24,6 +30,18 @@ public class BuyFragment extends Fragment {
     SlidingBar mDepositSlider;
     @Bind(R.id.slider_term)
     SlidingBar mTermSlider;
+    @Bind(R.id.search_results)
+    ListView mListCars;
+
+    private static List<Car> cars = new ArrayList<>();
+
+    static {
+        cars.add(new Car("BMW 5", "http://cdn2.autoexpress.co.uk/sites/autoexpressuk/files/bmw_5.jpg"));
+        cars.add(new Car("BMW 5", "http://cdn2.autoexpress.co.uk/sites/autoexpressuk/files/bmw_5.jpg"));
+        cars.add(new Car("BMW 5", "http://cdn2.autoexpress.co.uk/sites/autoexpressuk/files/bmw_5.jpg"));
+        cars.add(new Car("BMW 5", "http://cdn2.autoexpress.co.uk/sites/autoexpressuk/files/bmw_5.jpg"));
+        cars.add(new Car("BMW 5", "http://cdn2.autoexpress.co.uk/sites/autoexpressuk/files/bmw_5.jpg"));
+    }
 
 
     @Nullable
@@ -32,10 +50,18 @@ public class BuyFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_buy, container, false);
         ButterKnife.bind(v, getActivity());
 
+        CarAdapter carAdapter = new CarAdapter(getActivity(), cars);
+        mListCars.setAdapter(carAdapter);
+
         if (savedInstanceState != null) {
             mDepositSlider.setEnabled(false);
         }
 
         return v;
+    }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
     }
 }

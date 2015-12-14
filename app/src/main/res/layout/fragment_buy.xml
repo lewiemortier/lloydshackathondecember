@@ -14,7 +14,7 @@
             android:id="@+id/slider_credits"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:value="8000"
+            app:value="3000"
             app:labelText="@string/available_credit"/>
 
         <com.dminc.lloydshackathon2.Vews.SlidingBar
@@ -31,6 +31,63 @@
             app:maxValue="36"
             app:value="24"
             app:labelText="@string/available_credit"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="200dp"
+            android:background="@color/colorAccent"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divider"
+            android:layout_marginTop="@dimen/slider_bottom"
+            android:layout_marginBottom="@dimen/slider_bottom"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/filter"
+            android:layout_marginBottom="@dimen/slider_top"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bmw"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/slider_top"
+                android:text="@string/bmw"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/slider_top"
+                android:text="@string/add_more_filter"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divider"
+            android:layout_marginTop="@dimen/slider_bottom"
+            android:layout_marginBottom="@dimen/slider_bottom"/>
+
+        <ListView
+            android:id="@+id/search_results"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:choiceMode="singleChoice"
+            android:nestedScrollingEnabled="true"/>
 
     </LinearLayout>
 </ScrollView>
