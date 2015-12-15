@@ -29,7 +29,7 @@
             android:id="@+id/slider_term"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:maxValue="37"
+            app:maxValue="36"
             app:displayMoney="false"
             app:value="24"
             app:labelText="@string/term"/>

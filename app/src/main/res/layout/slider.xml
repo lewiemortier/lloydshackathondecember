@@ -13,7 +13,7 @@
     <SeekBar
         android:id="@+id/slider_seekbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:layout_marginBottom="@dimen/slider_bottom"
         android:layout_marginTop="@dimen/slider_top"
         android:layout_below="@id/slider_title"
