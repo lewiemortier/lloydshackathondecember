@@ -39,7 +39,7 @@ public class BuyFragment extends Fragment {
     private static List<Car> cheap_cars = new ArrayList<>();
 
     static {
-        fancy_cars.add(new Car("McClaren 675LT", "http://fancy_cars.mclaren.com/files/live/sites/mclaren/files/fancy_cars-mclaren-com-Main/McLaren%20Model%20Section/675LT/Design/Shot05_675LT_Profile-resize1500x937.jpg"));
+        fancy_cars.add(new Car("McClaren 675LT", "http://cars.mclaren.com/files/live/sites/mclaren/files/cars-mclaren-com-Main/McLaren%20Model%20Section/675LT/Design/Shot05_675LT_Profile-resize1500x937.jpg"));
         fancy_cars.add(new Car("Batmobile", "http://www.ci.lancaster.ma.us/Pages/LancasterMA_Events/S02157D9F-02157DD0.0/8632768_1.jpg"));
         fancy_cars.add(new Car("Maserati Ghibli", "http://www.maserati.co.uk/mediaObject/redesign/new-model-menu/resized%2080/QP_GTS/resolutions/res-l427x1000/QP_GTS.jpg"));
         fancy_cars.add(new Car("Lamborghini Aventador", "http://o.aolcdn.com/commerce/autodata/images/USC30LGC041A021001.jpg"));

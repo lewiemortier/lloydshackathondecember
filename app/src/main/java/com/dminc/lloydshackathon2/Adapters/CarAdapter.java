@@ -1,6 +1,7 @@
 package com.dminc.lloydshackathon2.Adapters;
 
 import android.content.Context;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 
 import com.dminc.lloydshackathon2.Objects.Car;
 import com.dminc.lloydshackathon2.R;
+import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -64,9 +66,31 @@ public class CarAdapter extends BaseAdapter {
         Car car = mCars.get(position);
         viewHolder.make.setText(car.getmMake());
 
+//        Picasso.with(mContext)
+//                .setLoggingEnabled(true);
+//
+//        Picasso.Builder builder = new Picasso.Builder(mContext);
+//        builder.listener(new Picasso.Listener() {
+//            @Override
+//            public void onImageLoadFailed(Picasso picasso, Uri uri, Exception exception) {
+//                exception.printStackTrace();
+//            }
+//        });
+
         Picasso.with(mContext)
-                .load(car.getmImageUrl())
-                .into(viewHolder.image);
+        .load(car.getmImageUrl())
+                .resize(250, 250)
+//                .centerCrop()
+                .into(viewHolder.image, new Callback() {
+                    @Override
+                    public void onSuccess() {
+                    }
+
+                    @Override
+                    public void onError() {
+
+                    }
+                });
 
         return convertView;
     }
