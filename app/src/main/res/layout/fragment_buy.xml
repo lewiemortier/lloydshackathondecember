@@ -32,7 +32,7 @@
             app:maxValue="37"
             app:displayMoney="false"
             app:value="24"
-            app:labelText="@string/available_credit"/>
+            app:labelText="@string/term"/>
 
         <ImageView
             android:layout_width="match_parent"

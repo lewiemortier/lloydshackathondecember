@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Car hub</string>
+    <string name="buy_my_car">Lloyds - Buy my car</string>
     <string name="open_drawer">Open drawer</string>
     <string name="close_drawer">Close drawer</string>
     <string name="available_credit">Available credit</string>

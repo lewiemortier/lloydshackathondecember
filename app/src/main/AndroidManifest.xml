@@ -12,7 +12,7 @@
 
 
         <activity android:name=".Activites.BuyActivity"
-            android:label="Buy a car">
+            android:label="@string/buy_my_car">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
