@@ -13,10 +13,12 @@ import android.widget.TextView;
 import com.dminc.lloydshackathon2.Adapters.CarAdapter;
 import com.dminc.lloydshackathon2.Objects.Car;
 import com.dminc.lloydshackathon2.R;
+import com.dminc.lloydshackathon2.Vews.DialView;
 import com.dminc.lloydshackathon2.Vews.SlidingBar;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -34,6 +36,8 @@ public class BuyFragment extends Fragment {
     SlidingBar mTermSlider;
     @Bind(R.id.search_results)
     ListView mListCars;
+    @Bind(R.id.view_dial)
+    DialView mDialView;
 
     @Bind(R.id.filter_1)
     TextView mFilter1;
@@ -118,7 +122,7 @@ public class BuyFragment extends Fragment {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-                updateValues();
+
             }
         });
 
@@ -135,7 +139,7 @@ public class BuyFragment extends Fragment {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-                updateValues();
+
             }
         });
 
@@ -143,10 +147,7 @@ public class BuyFragment extends Fragment {
     }
 
     private void updateValues() {
-
         int totalValue = mCreditsSlider.getValue() + mDepositSlider.getValue();
-
-        // TODO update dial
 
         //Update list
         List<Car> selectedCars;
@@ -166,6 +167,9 @@ public class BuyFragment extends Fragment {
         }
 
         ((CarAdapter) mListCars.getAdapter()).setCars(selectedCars);
+
+        float percent = mCreditsSlider.getPercentage();
+        mDialView.setValue(percent);
     }
 
     @Override

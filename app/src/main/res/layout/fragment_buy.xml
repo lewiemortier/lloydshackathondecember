@@ -34,8 +34,9 @@
             app:value="24"
             app:labelText="@string/term"/>
 
-        <ImageView
-            android:layout_width="match_parent"
+        <com.dminc.lloydshackathon2.Vews.DialView
+            android:id="@+id/view_dial"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minHeight="200dp"
             android:background="@color/colorAccent"/>

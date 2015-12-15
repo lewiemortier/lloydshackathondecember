@@ -13,8 +13,6 @@ import android.widget.TextView;
 import com.dminc.lloydshackathon2.R;
 import com.dminc.lloydshackathon2.Utils.Utils;
 
-import java.util.zip.Inflater;
-
 /**
  * @author Lewie Mortier
  */
@@ -24,6 +22,8 @@ public class SlidingBar extends RelativeLayout {
     private SeekBar mSeekbar;
     private boolean mIsMoneyMode;
     private EditText mValue;
+
+    private float mMaxValue;
 
     public SlidingBar(Context context) {
         super(context);
@@ -50,12 +50,12 @@ public class SlidingBar extends RelativeLayout {
             TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.Slider);
             mTitle.setText(a.getString(R.styleable.Slider_labelText));
             float value = a.getFloat(R.styleable.Slider_value, 0);
-            float maxValue = a.getFloat(R.styleable.Slider_maxValue, 5000);
+            mMaxValue = a.getFloat(R.styleable.Slider_maxValue, 5000);
             mIsMoneyMode = a.getBoolean(R.styleable.Slider_displayMoney, true);
 
             mValue.setText(mIsMoneyMode ? Utils.formatPrice(value) : Integer.toString((int) Math.floor(value)));
-            mSeekbar.setMax((int) Math.ceil(maxValue));
             mSeekbar.setProgress(Math.round(value));
+            mSeekbar.setMax((int) Math.ceil(mMaxValue));
             a.recycle();
         }
 
@@ -89,6 +89,9 @@ public class SlidingBar extends RelativeLayout {
         return mSeekbar.getProgress();
     }
 
+    public float getPercentage() {
+        return (mSeekbar.getProgress() / mMaxValue * 100);
+    }
 
     public interface SliderChangedCallback {
 
