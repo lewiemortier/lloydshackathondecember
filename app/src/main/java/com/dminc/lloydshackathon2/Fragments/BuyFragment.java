@@ -65,7 +65,7 @@ public class BuyFragment extends Fragment {
         medium_cars.add(new Car("Audi R6 Avant", "http://www.audi.com.au/content/dam/ngw/au/drop_down_model_images/drop_down_0002_rs_6_avant.png", "14599"));
 
         cheap_cars.add(new Car("Robin Reliant", "http://s3.caradvice.com.au/wp-content/uploads/2011/06/reliant-robin-top-gear.jpg", "750"));
-        cheap_cars.add(new Car("Trabant", "http://s3.caradvice.com.au/wp-content/uploads/2011/06/reliant-robin-top-gea", "999"));
+        cheap_cars.add(new Car("Trabant", "blablabla", "999"));
         cheap_cars.add(new Car("Skoda 130 LR", "http://farm4.static.flickr.com/3080/3163917405_dea6433ba3_b.jpg", "4999"));
         cheap_cars.add(new Car("Ford Escort", "http://www.aronline.co.uk/blogs/wp-content/uploads/2011/08/xr3i.jpg", "2000"));
         cheap_cars.add(new Car("Chevrolet Rust Bucket", "http://thumbs.dreamstime.com/x/antique-rusty-old-car-11957574.jpg", "999"));
