@@ -53,9 +53,9 @@ public class SlidingBar extends RelativeLayout {
             float maxValue = a.getFloat(R.styleable.Slider_maxValue, 5000);
             mIsMoneyMode = a.getBoolean(R.styleable.Slider_displayMoney, true);
 
-            mSeekbar.setProgress(Math.round(value));
             mValue.setText(mIsMoneyMode ? Utils.formatPrice(value) : Integer.toString((int) Math.floor(value)));
             mSeekbar.setMax((int) Math.ceil(maxValue));
+            mSeekbar.setProgress(Math.round(value));
             a.recycle();
         }
 
