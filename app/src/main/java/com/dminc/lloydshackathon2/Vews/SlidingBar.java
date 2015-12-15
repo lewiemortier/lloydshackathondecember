@@ -85,6 +85,11 @@ public class SlidingBar extends RelativeLayout {
         mValue.setText(mIsMoneyMode ? Utils.formatPrice(value) : Integer.toString(value));
     }
 
+    public int getValue() {
+        return mSeekbar.getProgress();
+    }
+
+
     public interface SliderChangedCallback {
 
         void onSliderChanged(int progress);
