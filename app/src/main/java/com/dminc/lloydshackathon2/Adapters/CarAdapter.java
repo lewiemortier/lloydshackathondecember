@@ -68,8 +68,10 @@ public class CarAdapter extends BaseAdapter {
         viewHolder.price.setText(Utils.formatPrice(Integer.valueOf(car.getmPrice())));
 
         Picasso.with(mContext)
-        .load(car.getmImageUrl())
+                .load(car.getmImageUrl())
                 .resize(650, 450)
+                .placeholder(R.drawable.placeholder)
+                .error(R.drawable.placeholder)
                 .centerCrop()
                 .into(viewHolder.image, new Callback() {
                     @Override
