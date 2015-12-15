@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merge xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <TextView
+        android:textSize="16sp"
         android:id="@+id/slider_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -20,10 +21,14 @@
         android:layout_toStartOf="@+id/slider_value" />
 
     <EditText
+        android:layout_alignBottom="@id/slider_seekbar"
+        android:textColor="@color/colorAccent"
+        android:gravity="right"
+        android:text="E5,000,000.00"
         android:layout_alignParentRight="true"
         android:id="@+id/slider_value"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:minWidth="32dp"/>
+        android:minWidth="120dp"/>
 
-</merge>
+</RelativeLayout>

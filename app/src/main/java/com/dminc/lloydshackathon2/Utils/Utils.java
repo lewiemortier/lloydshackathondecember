@@ -4,10 +4,17 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.util.TypedValue;
 
+import java.text.NumberFormat;
+import java.util.Currency;
+import java.util.Locale;
+
 /**
  * @author Lewie Mortier
  */
 public class Utils {
+
+    private static Locale DEFAULT_LOCALE = Locale.UK;
+
     /**
      * Converts dip to pixels.
      *
@@ -19,5 +26,11 @@ public class Utils {
         Resources r = context.getResources();
         return (int) TypedValue
                 .applyDimension(TypedValue.COMPLEX_UNIT_DIP, dps, r.getDisplayMetrics());
+    }
+
+    public static String formatPrice(double price) {
+        NumberFormat numberFormat = NumberFormat.getCurrencyInstance();
+        numberFormat.setCurrency(Currency.getInstance(DEFAULT_LOCALE));
+        return numberFormat.format(price);
     }
 }

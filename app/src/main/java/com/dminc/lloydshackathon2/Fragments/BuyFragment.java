@@ -61,7 +61,7 @@ public class BuyFragment extends Fragment {
         mCreditsSlider.setOnSeekListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                mCreditsSlider.setValue(Integer.toString(progress));
+                mCreditsSlider.setValue(progress);
             }
 
             @Override
@@ -78,7 +78,7 @@ public class BuyFragment extends Fragment {
         mDepositSlider.setOnSeekListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                mDepositSlider.setValue(Integer.toString(progress));
+                mDepositSlider.setValue(progress);
             }
 
             @Override
@@ -95,7 +95,7 @@ public class BuyFragment extends Fragment {
         mTermSlider.setOnSeekListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                mDepositSlider.setValue(Integer.toString(progress));
+                mTermSlider.setValue(progress);
             }
 
             @Override

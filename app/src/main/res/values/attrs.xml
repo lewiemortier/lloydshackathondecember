@@ -2,7 +2,8 @@
 <resources>
     <declare-styleable name="Slider">
         <attr name="labelText" format="string"/>
-        <attr name="value" format="integer"/>
-        <attr name="maxValue" format="integer"/>
+        <attr name="value" format="float"/>
+        <attr name="maxValue" format="float"/>
+        <attr name="displayMoney" format="boolean" />
     </declare-styleable>
 </resources>

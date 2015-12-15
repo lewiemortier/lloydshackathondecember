@@ -11,6 +11,7 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 
 import com.dminc.lloydshackathon2.R;
+import com.dminc.lloydshackathon2.Utils.Utils;
 
 import java.util.zip.Inflater;
 
@@ -21,6 +22,7 @@ public class SlidingBar extends RelativeLayout {
 
     private TextView mTitle;
     private SeekBar mSeekbar;
+    private boolean mIsMoneyMode;
     private EditText mValue;
 
     public SlidingBar(Context context) {
@@ -47,9 +49,13 @@ public class SlidingBar extends RelativeLayout {
         if (attrs != null) {
             TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.Slider);
             mTitle.setText(a.getString(R.styleable.Slider_labelText));
-            mSeekbar.setProgress(a.getInteger(R.styleable.Slider_value, 0));
-            mValue.setText(Integer.toString(mSeekbar.getProgress()));
-            mSeekbar.setMax(a.getInteger(R.styleable.Slider_maxValue, 8000));
+            float value = a.getFloat(R.styleable.Slider_value, 0);
+            float maxValue = a.getFloat(R.styleable.Slider_maxValue, 5000);
+            mIsMoneyMode = a.getBoolean(R.styleable.Slider_displayMoney, true);
+
+            mSeekbar.setProgress(Math.round(value));
+            mValue.setText(mIsMoneyMode ? Utils.formatPrice(value) : Integer.toString((int) Math.floor(value)));
+            mSeekbar.setMax((int) Math.ceil(maxValue));
             a.recycle();
         }
 
@@ -75,8 +81,8 @@ public class SlidingBar extends RelativeLayout {
         mSeekbar.setOnSeekBarChangeListener(listener);
     }
 
-    public void setValue(String value) {
-        mValue.setText(value);
+    public void setValue(int value) {
+        mValue.setText(mIsMoneyMode ? Utils.formatPrice(value) : Integer.toString(value));
     }
 
     public interface SliderChangedCallback {
