@@ -90,7 +90,7 @@ public class SlidingBar extends RelativeLayout {
     }
 
     public float getPercentage() {
-        return (mSeekbar.getProgress() / mMaxValue * 100);
+        return 100 - (mSeekbar.getProgress() / mMaxValue * 100);
     }
 
     public interface SliderChangedCallback {
