@@ -1,11 +1,13 @@
 package com.dminc.lloydshackathon2.Fragments;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ListView;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -84,7 +86,7 @@ public class BuyFragment extends Fragment {
 
         // Set height hack - allow full listview to show
         ViewGroup.LayoutParams listViewParams = mListCars.getLayoutParams();
-        listViewParams.height = 1200;
+        listViewParams.height = 1600;
         mListCars.requestLayout();
 
 
@@ -142,6 +144,10 @@ public class BuyFragment extends Fragment {
 
             }
         });
+
+        InputMethodManager imm = (InputMethodManager)getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(v.getWindowToken(), 0);
+
 
         return v;
     }

@@ -8,7 +8,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:padding="16dp"
         android:orientation="vertical">
 
         <com.dminc.lloydshackathon2.Vews.SlidingBar
@@ -39,8 +39,16 @@
             android:id="@+id/view_dial"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
             android:minHeight="200dp"
+            android:layout_marginBottom="8dp"
             android:background="@color/colorAccent"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#FFFFFF">
 
         <View
             android:layout_width="match_parent"
@@ -50,14 +58,19 @@
             android:layout_marginBottom="@dimen/slider_bottom"/>
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
             android:text="@string/filter"
             android:layout_marginBottom="@dimen/slider_top"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+
             android:orientation="horizontal">
 
             <TextView
@@ -98,6 +111,6 @@
             android:minHeight="300dp"
             android:choiceMode="singleChoice"
             android:nestedScrollingEnabled="true"/>
-
+        </LinearLayout>
     </LinearLayout>
 </ScrollView>
