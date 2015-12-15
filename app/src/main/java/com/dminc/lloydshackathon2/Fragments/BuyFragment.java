@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.SeekBar;
 
 import com.dminc.lloydshackathon2.Adapters.CarAdapter;
 import com.dminc.lloydshackathon2.Objects.Car;
@@ -57,7 +58,65 @@ public class BuyFragment extends Fragment {
             mDepositSlider.setEnabled(false);
         }
 
+        mCreditsSlider.setOnSeekListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                mCreditsSlider.setValue(Integer.toString(progress));
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                updateValues();
+            }
+        });
+
+        mDepositSlider.setOnSeekListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                mDepositSlider.setValue(Integer.toString(progress));
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                updateValues();
+            }
+        });
+
+        mTermSlider.setOnSeekListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                mDepositSlider.setValue(Integer.toString(progress));
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                updateValues();
+            }
+        });
+
         return v;
+    }
+
+    private void updateValues() {
+        // TODO update dial
+
+        //Update list
+        List<Car> selectedCars = new ArrayList<>();
     }
 
     @Override

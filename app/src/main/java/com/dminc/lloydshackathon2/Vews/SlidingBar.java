@@ -56,9 +56,7 @@ public class SlidingBar extends RelativeLayout {
         mSeekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                if (progress != 0) {
-                    mValue.setText(Integer.toString(progress));
-                }
+                mValue.setText(Integer.toString(progress));
             }
 
             @Override
@@ -71,6 +69,14 @@ public class SlidingBar extends RelativeLayout {
 
             }
         });
+    }
+
+    public void setOnSeekListener(SeekBar.OnSeekBarChangeListener listener) {
+        mSeekbar.setOnSeekBarChangeListener(listener);
+    }
+
+    public void setValue(String value) {
+        mValue.setText(value);
     }
 
     public interface SliderChangedCallback {
